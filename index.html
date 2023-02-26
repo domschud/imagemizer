@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Random Image Generator</title>
+  </head>
+  <body>
+    <h1>Click the button to generate a random image:</h1>
+    <button id="generate-button">Generate</button>
+    <br>
+    <br>
+    <img id="image" src="" alt="Random image">
+    <script>
+      // Get the button element
+      const button = document.getElementById('generate-button');
+
+      // Get the image element
+      const image = document.getElementById('image');
+
+      // Define an array of image URLs
+      const images = [
+        'https://via.placeholder.com/150/0000FF/FFFFFF?text=Image+1',
+        'https://via.placeholder.com/150/FF0000/FFFFFF?text=Image+2',
+        'https://via.placeholder.com/150/00FF00/FFFFFF?text=Image+3',
+        'https://via.placeholder.com/150/FFFF00/000000?text=Image+4',
+        'https://via.placeholder.com/150/FF00FF/FFFFFF?text=Image+5',
+      ];
+
+      // Add a click event listener to the button
+      button.addEventListener('click', () => {
+        // Generate a random index into the array of images
+        const randomIndex = Math.floor(Math.random() * images.length);
+
+        // Set the image source to the selected image URL
+        image.src = images[randomIndex];
+      });
+    </script>
+  </body>
+</html>
